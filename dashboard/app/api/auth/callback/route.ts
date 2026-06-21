@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { exchangeCodeForToken, fetchDiscordUser } from "@/lib/discord";
 import { createSession } from "@/lib/session";
 import { query } from "@/lib/db";
+import { getAppBaseUrl } from "@/lib/url";
 
 export async function GET(req: NextRequest) {
   const searchParams = req.nextUrl.searchParams;
@@ -9,7 +10,7 @@ export async function GET(req: NextRequest) {
   const state = searchParams.get("state");
   const storedState = req.cookies.get("tv_oauth_state")?.value;
 
-  const baseUrl = req.nextUrl.origin;
+  const baseUrl = getAppBaseUrl();
 
   // تحقق من الـ state لحماية من هجمات CSRF
   if (!code || !state || !storedState || state !== storedState) {
