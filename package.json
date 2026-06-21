@@ -2,7 +2,7 @@
   "name": "tempvoice-unified",
   "version": "1.0.0",
   "private": true,
-  "description": "TempVoice Clone - بوت ديسكورد والداشبورد معًا في خدمة واحدة (لتوفير تكلفة الاستضافة على Railway)",
+  "description": "TempVoice - بوت ديسكورد والداشبورد معًا في خدمة واحدة (لتوفير تكلفة الاستضافة على Railway)",
   "workspaces": ["dashboard", "bot"],
   "scripts": {
     "build": "next build dashboard",

@@ -7,7 +7,7 @@ module.exports = {
         console.log(`📊 متصل بـ ${client.guilds.cache.size} سيرفر`);
 
         client.user.setPresence({
-            activities: [{ name: '/setup | TempVoice Clone', type: 2 }], // type 2 = Listening
+            activities: [{ name: '/setup | TempVoice', type: 2 }], // type 2 = Listening
             status: 'online',
         });
     },

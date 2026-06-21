@@ -1,5 +1,5 @@
 {
-  "name": "tempvoice-clone-bot",
+  "name": "tempvoice-bot",
   "version": "1.0.0",
   "description": "Free & Open-Source Temporary Voice Channels Discord Bot - All features unlocked",
   "main": "src/index.js",

@@ -16,7 +16,7 @@ function buildInterfaceEmbed(lang) {
         .setColor(BRAND_COLOR)
         .setTitle(t(lang, 'interface_title'))
         .setDescription(t(lang, 'interface_desc'))
-        .setFooter({ text: 'TempVoice Clone • Free & Open Source' });
+        .setFooter({ text: 'TempVoice • Free & Open Source' });
 }
 
 /**
