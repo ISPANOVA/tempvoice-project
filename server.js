@@ -23,7 +23,12 @@ const { startBot } = require('./bot/src/index');
 const botService = require('./bot/src/botService');
 
 const PORT = process.env.PORT || 3000;
-const dev = process.env.NODE_ENV !== 'production';
+// نجعل "production" هو الافتراضي الآمن عند عدم تحديد NODE_ENV، بدل
+// "development". هذا مهم لأن بعض منصات الاستضافة (أو سكريبتات تشغيل
+// مخصصة) قد لا تضبط NODE_ENV=production تلقائيًا بشكل مضمون، وتشغيل
+// Next.js في وضع dev بالخطأ في الإنتاج يكسر HMR/WebSocket ويمنع تحميل
+// الصفحات بشكل صحيح (وهذا بالضبط ما كان يحدث).
+const dev = process.env.NODE_ENV === 'development';
 
 const dashboardDir = path.join(__dirname, 'dashboard');
 const nextApp = next({ dev, dir: dashboardDir });

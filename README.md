@@ -291,6 +291,7 @@ npm start
 | القنوات الصوتية لا تُنشأ عند دخول Creator Channel | تأكد من تفعيل `SERVER MEMBERS INTENT` في Discord Developer Portal، وأن البوت لديه صلاحية Manage Channels في السيرفر |
 | رسالة "Database connection failed" | تأكد من نسخ `DATABASE_URL` بالكامل بدون مسافات إضافية (الأفضل استخدام Add Reference بدل النسخ اليدوي)، ومن أن قاعدة بيانات Railway تعمل |
 | خطأ بناء على Railway متعلق بـ Turbopack/workspace root | تأكد أنك رفعت الجذر بالكامل (وليس مجلد فرعي فقط)، وأن `dashboard/next.config.ts` موجود وفيه `turbopack.root` |
+| الصفحة تفضل على "Loading..." والسيرفرات لا تظهر، وفي الـ Logs ظهرت رسائل عن `webpack-hmr` أو `allowedDevOrigins` | هذا يعني أن التطبيق يعمل في وضع تطوير (`next dev`) بدل وضع إنتاج (`next start`) خطأً. تأكد من إضافة `NODE_ENV=production` بشكل صريح في Variables على Railway، وتأكد أن `npm run build` نُفِّذ بنجاح قبل التشغيل |
 
 ---
 
