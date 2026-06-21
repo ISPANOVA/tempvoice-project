@@ -1,0 +1,125 @@
+@import "tailwindcss";
+
+@theme {
+  /* ===== الألوان الأساسية ===== */
+  --color-bg: #0b0e14;
+  --color-surface: #11151d;
+  --color-surface-raised: #161b26;
+  --color-border: #232938;
+  --color-border-soft: #1a1f2c;
+
+  --color-text-primary: #e9ebf1;
+  --color-text-secondary: #8d94a6;
+  --color-text-tertiary: #5b6275;
+
+  --color-accent: #7c8fff;
+  --color-accent-soft: #7c8fff1a;
+  --color-accent-hover: #95a4ff;
+
+  --color-live: #4fd1c5;
+  --color-live-soft: #4fd1c51a;
+
+  --color-danger: #f25767;
+  --color-danger-soft: #f257671a;
+
+  --color-warning: #f2b557;
+  --color-warning-soft: #f2b5571a;
+
+  --font-display: "Space Grotesk", "Cairo", sans-serif;
+  --font-body: "Inter", "IBM Plex Sans Arabic", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+html,
+body {
+  background: var(--color-bg);
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+}
+
+* {
+  border-color: var(--color-border);
+}
+
+::selection {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+/* ===== سكرول بار مخصص ===== */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-tertiary);
+}
+
+/* ===== العنصر المميز: موجة صوت حية (Live Waveform) ===== */
+.waveform {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  height: 14px;
+}
+.waveform span {
+  display: block;
+  width: 2.5px;
+  border-radius: 2px;
+  background: var(--color-live);
+  animation: waveform-bounce 1.1s ease-in-out infinite;
+}
+.waveform span:nth-child(1) { height: 40%; animation-delay: -0.9s; }
+.waveform span:nth-child(2) { height: 100%; animation-delay: -0.6s; }
+.waveform span:nth-child(3) { height: 60%; animation-delay: -0.3s; }
+.waveform span:nth-child(4) { height: 85%; animation-delay: -1.1s; }
+
+@keyframes waveform-bounce {
+  0%, 100% { transform: scaleY(0.35); }
+  50% { transform: scaleY(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .waveform span {
+    animation: none;
+    transform: scaleY(0.7);
+  }
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ===== أنيميشن دخول الصفحة ===== */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.fade-in-up {
+  animation: fade-in-up 0.35s ease-out both;
+}
+
+/* ===== دعم اتجاه RTL للعربية ===== */
+[dir="rtl"] .ltr-flip {
+  transform: scaleX(-1);
+}
+
+/* فوكس واضح لإمكانية الوصول */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+  border-radius: 6px;
+}

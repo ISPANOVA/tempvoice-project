@@ -1,0 +1,26 @@
+{
+  "name": "tempvoice-clone-bot",
+  "version": "1.0.0",
+  "description": "Free & Open-Source Temporary Voice Channels Discord Bot - All features unlocked",
+  "main": "src/index.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "deploy-commands": "node src/deploy-commands.js"
+  },
+  "keywords": ["discord", "bot", "temporary-voice", "tempvoice", "voice-channels"],
+  "author": "smrh",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^14.16.3",
+    "pg": "^8.13.1",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

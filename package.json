@@ -1,0 +1,41 @@
+{
+  "name": "tempvoice-unified",
+  "version": "1.0.0",
+  "private": true,
+  "description": "TempVoice Clone - بوت ديسكورد والداشبورد معًا في خدمة واحدة (لتوفير تكلفة الاستضافة على Railway)",
+  "workspaces": ["dashboard", "bot"],
+  "scripts": {
+    "build": "next build dashboard",
+    "start": "node server.js",
+    "dev": "node server.js",
+    "deploy-commands": "node bot/src/deploy-commands.js"
+  },
+  "dependencies": {
+    "@fontsource/inter": "^5.2.8",
+    "@fontsource/jetbrains-mono": "^5.2.8",
+    "@fontsource/space-grotesk": "^5.2.10",
+    "discord.js": "^14.16.3",
+    "dotenv": "^16.4.5",
+    "jose": "^6.2.3",
+    "lucide-react": "^1.21.0",
+    "next": "16.2.9",
+    "pg": "^8.22.0",
+    "react": "19.2.4",
+    "react-dom": "19.2.4"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/pg": "^8.20.0",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.2.9",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "license": "MIT"
+}
